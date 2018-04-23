@@ -71,12 +71,10 @@ $${ROSTRA_SRC}/xos/platform/platform.hpp \
 $${ROSTRA_SRC}/xos/platform/platform_apple_osx.hpp \
 $${ROSTRA_SRC}/xos/platform/platform_microsoft_windows.hpp \
 $${ROSTRA_SRC}/xos/platform/platform_posix.hpp \
-$${ROSTRA_SRC}/xos/base/base.hpp \
 
 # librostra SOURCES
 #
 librostra_SOURCES += \
 $${ROSTRA_SRC}/xos/platform/platform.cpp \
-$${ROSTRA_SRC}/xos/base/base.cpp \
 
 ########################################################################
