@@ -22,20 +22,41 @@
 ########################################################################
 
 ########################################################################
+# nadir
+#
+# pkg-config --cflags --libs nadir
+#
+
+# build nadir INCLUDEPATH
+#
+build_nadir_INCLUDEPATH += \
+
+# build nadir DEFINES
+#
+build_nadir_DEFINES += \
+
+# build nadir LIBS
+#
+build_nadir_LIBS += \
+
+########################################################################
 # rostra
 
 # build rostra INCLUDEPATH
 #
 build_rostra_INCLUDEPATH += \
+$${build_nadir_INCLUDEPATH} \
 
 
 # build rostra DEFINES
 #
 build_rostra_DEFINES += \
+$${build_nadir_DEFINES} \
 
 
 # build rostra LIBS
 #
 build_rostra_LIBS += \
+$${build_nadir_LIBS} \
 
 
