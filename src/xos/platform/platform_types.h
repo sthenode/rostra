@@ -158,6 +158,8 @@ typedef int BOOL;
 typedef void* pointer_t;
 #endif /*/ defined(MACOSX) /*/
 
+typedef const void* const_pointer_t;
+
 typedef char tchar_t;
 typedef uint8_t byte_t;
 typedef uint16_t word_t;
