@@ -1,6 +1,5 @@
-/*/
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2018 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -14,31 +13,30 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: platform_microsoft_windows.c
+///   File: version.hpp
 ///
 /// Author: $author$
-///   Date: 3/31/2018
+///   Date: 1/31/2019
 ///////////////////////////////////////////////////////////////////////
-/*/
-#include "xos/platform/platform_microsoft_windows.h"
+#ifndef _XOS_LIB_ROSTRA_VERSION_HPP
+#define _XOS_LIB_ROSTRA_VERSION_HPP
 
-#if (_MSC_VER < MSC_VER_14)
-int vfscanf(FILE* file, const char* format, va_list va) {
-    int count = 0;
-    return count;
-}
-#endif /*/ (_MSC_VER < MSC_VER_14) /*/
+#include "xos/lib/version.hpp"
 
-#if defined(__cplusplus)
 namespace xos {
-namespace platform {
-#endif /*/ defined(__cplusplus)  /*/
+namespace lib {
+namespace rostra {
 
-#if defined(__cplusplus)
-#else /*/ defined(__cplusplus)  /*/
-#endif /*/ defined(__cplusplus)  /*/
+///////////////////////////////////////////////////////////////////////
+///  Class: version
+///////////////////////////////////////////////////////////////////////
+class _EXPORT_CLASS version {
+public:
+    static const lib::version& which();
+}; /// class _EXPORT_CLASS version
 
-#if defined(__cplusplus)
-} /*/ namespace platform /*/
-} /*/ namespace xos /*/
-#endif /*/ defined(__cplusplus)  /*/
+} /// namespace rostra
+} /// namespace lib
+} /// namespace xos
+
+#endif /// _XOS_LIB_ROSTRA_VERSION_HPP 

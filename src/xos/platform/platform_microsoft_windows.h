@@ -26,6 +26,19 @@
 #include "xos/platform/platform_configure.h"
 
 #if defined(__cplusplus)
+extern "C" {
+#else /*/ defined(__cplusplus)  /*/
+#endif /*/ defined(__cplusplus)  /*/
+
+#if (_MSC_VER < MSC_VER_14)
+#if !defined(va_copy)
+#define va_copy(_target, _source) (_target = _source)
+#endif // !defined(va_copy)
+extern int vfscanf(FILE* file, const char* format, va_list va);
+#endif // (_MSC_VER < MSC_VER_14)
+
+#if defined(__cplusplus)
+} /*/ extern "C" /*/
 #else /*/ defined(__cplusplus)  /*/
 #endif /*/ defined(__cplusplus)  /*/
 

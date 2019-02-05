@@ -1,6 +1,5 @@
-/*/
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2018 $organization$
+/// Copyright (c) 1988-2019 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -14,31 +13,23 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: platform_microsoft_windows.c
+///   File: main.cpp
 ///
 /// Author: $author$
-///   Date: 3/31/2018
+///   Date: 1/31/2019
 ///////////////////////////////////////////////////////////////////////
-/*/
-#include "xos/platform/platform_microsoft_windows.h"
+#include "xos/app/console/rostra/main.hpp"
+#include "xos/console/main_main.cpp"
 
-#if (_MSC_VER < MSC_VER_14)
-int vfscanf(FILE* file, const char* format, va_list va) {
-    int count = 0;
-    return count;
-}
-#endif /*/ (_MSC_VER < MSC_VER_14) /*/
-
-#if defined(__cplusplus)
 namespace xos {
-namespace platform {
-#endif /*/ defined(__cplusplus)  /*/
+namespace app {
+namespace console {
+namespace rostra {
 
-#if defined(__cplusplus)
-#else /*/ defined(__cplusplus)  /*/
-#endif /*/ defined(__cplusplus)  /*/
+static main the_main;
 
-#if defined(__cplusplus)
-} /*/ namespace platform /*/
-} /*/ namespace xos /*/
-#endif /*/ defined(__cplusplus)  /*/
+} /// namespace rostra
+} /// namespace console
+} /// namespace app
+} /// namespace xos
+

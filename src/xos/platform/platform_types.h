@@ -78,6 +78,9 @@ typedef time_t useconds_t;
 typedef UINT uint;
 typedef USHORT ushort;
 typedef ULONG ulong;
+
+typedef void* pointer_t;
+typedef const void* const_pointer_t;
 /*/
 /// ...
 /// Microsoft C/C++

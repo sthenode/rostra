@@ -35,6 +35,11 @@
 // Microsoft C/C++
 // ...
 /*/
+#if !defined(DEBUG_BUILD)
+#if defined(_DEBUG)
+#define DEBUG_BUILD
+#endif /*/ defined(_DEBUG) /*/
+#endif /*/ !defined(DEBUG_BUILD) /*/
 /*/
 // ...
 // Microsoft C/C++
