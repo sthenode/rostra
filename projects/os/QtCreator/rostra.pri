@@ -25,8 +25,12 @@ UNAME = $$system(uname)
 contains(UNAME,Darwin) {
 ROSTRA_OS = macosx
 } else {
+contains(UNAME,Linux) {
 ROSTRA_OS = linux
-}
+} else {
+ROSTRA_OS = windows
+} # contains(UNAME,Linux)
+} # contains(UNAME,Darwin)
 
 #CONFIG += c++11
 #CONFIG += c++0x
@@ -69,12 +73,17 @@ rostra_DEFINES += \
 rostra_LIBS += \
 $${nadir_LIBS} \
 $${build_rostra_LIBS} \
+
+contains(ROSTRA_OS,macosx|linux) {
+rostra_LIBS += \
 -lpthread \
--ldl \
+-ldl
+} else {
+} # contains(ROSTRA_OS,macosx|linux)
 
 contains(ROSTRA_OS,linux) {
 rostra_LIBS += \
 -lrt
 } else {
-}
+} # contains(ROSTRA_OS,linux)
 

@@ -13,56 +13,56 @@
 # or otherwise) arising in any way out of the use of this software,
 # even if advised of the possibility of such damage.
 #
-#   File: librostra.pro
+#   File: Makefile
 #
 # Author: $author$
-#   Date: 4/1/2018
+#   Date: 8/8/2018
 #
-# QtCreator .pro file for rostra library librostra
-########################################################################
-include(../../../../../build/QtCreator/rostra.pri)
-include(../../../../QtCreator/rostra.pri)
-include(../../rostra.pri)
-include(../../../../QtCreator/lib/librostra/librostra.pri)
-
-TARGET = $${librostra_TARGET}
-TEMPLATE = $${librostra_TEMPLATE}
-CONFIG += $${librostra_CONFIG}
-
-########################################################################
-# INCLUDEPATH
-#
-INCLUDEPATH += \
-$${librostra_INCLUDEPATH} \
-
-# DEFINES
-# 
-DEFINES += \
-$${librostra_DEFINES} \
-
-########################################################################
-# OBJECTIVE_HEADERS
-#
-OBJECTIVE_HEADERS += \
-$${librostra_OBJECTIVE_HEADERS} \
-
-# OBJECTIVE_SOURCES
-#
-OBJECTIVE_SOURCES += \
-$${librostra_OBJECTIVE_SOURCES} \
-
-########################################################################
-# HEADERS
-#
-HEADERS += \
-$${librostra_HEADERS} \
-$${OBJECTIVE_HEADERS} \
-
-# SOURCES
-#
-SOURCES += \
-$${librostra_SOURCES} \
-
+# generic Gcc Makefile for rostra
 ########################################################################
 
+OTHER_VERSION_PKG = ${PKG}
+OTHER_DEPENDS_PKG = ${PKG}/..
+OTHER_THIRDPARTY_NAME = thirdparty
+OTHER_THIRDPARTY_VERSION_PKG = ${OTHER_VERSION_PKG}/${OTHER_THIRDPARTY_NAME}
+
+ROSTRA_PKG = ${PKG}
+ROSTRA_SRC = ${ROSTRA_PKG}/src
+ROSTRA_BLD = ${ROSTRA_PKG}/${BLD}/${BUILD_TYPE}
+ROSTRA_LIB = ${ROSTRA_BLD}/lib
+ROSTRA_BIN = ${ROSTRA_BLD}/bin
+
+
+########################################################################
+# rostra
+
+# rostra USRDEFINES
+#
+rostra_USRDEFINES += \
+${build_rostra_USRDEFINES} \
+
+# rostra USRINCLUDES
+#
+rostra_USRINCLUDES += \
+-I${ROSTRA_SRC} \
+${build_rostra_USRINCLUDES} \
+
+# rostra USRCXXFLAGS
+#
+rostra_USRCXXFLAGS += \
+${build_rostra_USRCXXFLAGS} \
+
+# rostra USRLIBDIRS
+#
+rostra_USRLIBDIRS += \
+-L${ROSTRA_LIB} \
+${build_rostra_USRLIBDIRS} \
+
+# rostra LIBS
+#
+rostra_LIBS += \
+-lrostra \
+${build_rostra_LIBS} \
+
+########################################################################
 

@@ -46,7 +46,7 @@ $${rostra_exe_OBJECTIVE_HEADERS} \
 
 # OBJECTIVE_SOURCES
 #
-SOURCES += \
+OBJECTIVE_SOURCES += \
 $${rostra_exe_OBJECTIVE_SOURCES} \
 
 ########################################################################
@@ -54,12 +54,12 @@ $${rostra_exe_OBJECTIVE_SOURCES} \
 #
 HEADERS += \
 $${rostra_exe_HEADERS} \
+$${OBJECTIVE_HEADERS} \
 
 # SOURCES
 #
 SOURCES += \
 $${rostra_exe_SOURCES} \
-$${OBJECTIVE_SOURCES} \
 
 ########################################################################
 # FRAMEWORKS
