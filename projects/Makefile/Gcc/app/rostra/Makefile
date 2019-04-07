@@ -76,8 +76,8 @@ ${rostra_USRLIBDIRS} \
 #
 # Executable .cpp sources
 #
-#rostra_exe_EXE_CPP_SOURCES += \
-#${ROSTRA_SRC}/rostra/base/Base.cpp \
+rostra_exe_EXE_CPP_SOURCES += \
+${ROSTRA_SRC}/xos/app/console/rostra/main.cpp \
 
 #
 # Executable .m sources

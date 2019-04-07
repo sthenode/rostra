@@ -32,6 +32,52 @@ ROSTRA_BLD = ${ROSTRA_PKG}/${BLD}/${BUILD_TYPE}
 ROSTRA_LIB = ${ROSTRA_BLD}/lib
 ROSTRA_BIN = ${ROSTRA_BLD}/bin
 
+########################################################################
+# nadir
+NADIR_VERSION_MAJOR = 0
+NADIR_VERSION_MINOR = 0
+NADIR_VERSION_RELEASE = 0
+NADIR_VERSION = ${NADIR_VERSION_MAJOR}.${NADIR_VERSION_MINOR}.${NADIR_VERSION_RELEASE}
+NADIR_NAME = nadir
+NADIR_GROUP = ${NADIR_NAME}
+NADIR_VERSION_DIR = ${NADIR_GROUP}/${NADIR_NAME}-${NADIR_VERSION}
+NADIR_DEPENDS_DIR = ${NADIR_NAME}
+
+#NADIR_PKG = ${OTHER_THIRDPARTY_VERSION_PKG}/${NADIR_VERSION_DIR}
+#NADIR_PKG = ${OTHER_VERSION_PKG}/${NADIR_VERSION_DIR}
+NADIR_PKG = ${OTHER_DEPENDS_PKG}/${NADIR_DEPENDS_DIR}
+#NADIR_SRC = ${NADIR_PKG}/src/${BN_GROUP}/${BN_NAME}
+NADIR_SRC = ${NADIR_PKG}/src
+NADIR_BLD = ${NADIR_PKG}/${BLD}/${BUILD_TYPE}
+NADIR_LIB = ${NADIR_BLD}/lib
+NADIR_BIN = ${NADIR_BLD}/bin
+
+# nadir USRDEFINES
+#
+nadir_USRDEFINES += \
+
+# nadir USRINCLUDES
+#
+nadir_USRINCLUDES += \
+-I${NADIR_SRC} \
+
+# nadir USRCXXFLAGS
+#
+nadir_USRCXXFLAGS += \
+
+# nadir USRLIBDIRS
+#
+nadir_USRLIBDIRS += \
+-L${NADIR_LIB} \
+
+# nadir LIBS
+#
+nadir_LIBS += \
+-lnadir \
+
+# nadir FRAMEWORKS
+#
+nadir_FRAMEWORKS += \
 
 ########################################################################
 # rostra
@@ -45,24 +91,27 @@ ${build_rostra_USRDEFINES} \
 #
 rostra_USRINCLUDES += \
 -I${ROSTRA_SRC} \
+${nadir_USRINCLUDES} \
 ${build_rostra_USRINCLUDES} \
 
 # rostra USRCXXFLAGS
 #
 rostra_USRCXXFLAGS += \
+${nadir_USRCXXFLAGS} \
 ${build_rostra_USRCXXFLAGS} \
 
 # rostra USRLIBDIRS
 #
 rostra_USRLIBDIRS += \
 -L${ROSTRA_LIB} \
+${nadir_USRLIBDIRS} \
 ${build_rostra_USRLIBDIRS} \
 
 # rostra LIBS
 #
 rostra_LIBS += \
 -lrostra \
+${nadir_LIBS} \
 ${build_rostra_LIBS} \
 
 ########################################################################
-
