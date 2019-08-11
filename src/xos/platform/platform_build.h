@@ -91,8 +91,10 @@
 /// Define APPLEOS if Apple and Mach variants are defined
 /*/
 #if defined(APPLE) && defined(MACH)
-#include "TargetConditionals.h"
-#include "Availability.h"
+#include <TargetConditionals.h>
+#include <Availability.h>
+#include <mach/task.h>
+#include <mach/mach.h>
 #if defined(PLATFORM_DEFINED_DEBUG)
 #error defined APPLEOS
 #endif /*/ defined(PLATFORM_DEFINED_DEBUG) /*/
@@ -136,6 +138,18 @@
 #define MACOSX
 #endif /*/ !defined(MACOSX) /*/
 #endif /*/ defined(APPLEOSX) || defined(_APPLEOSX) || defined(__APPLEOSX__) || defined(__AppleOSX__) || defined(__appleosx__) /*/
+
+/*/
+/// Define APPIOS if any of the AppleIOS variants are defined
+/*/
+#if defined(APPLEIOS) || defined(_APPLEIOS) || defined(__APPLEIOS__) || defined(__AppleIOS__) || defined(__appleios__)
+#if defined(PLATFORM_DEFINED_DEBUG)
+#error defined APPIOS
+#endif /*/ defined(PLATFORM_DEFINED_DEBUG) /*/
+#if !defined(APPIOS)
+#define APPIOS
+#endif /*/ !defined(APPIOS) /*/
+#endif /*/ defined(APPLEIOS) || defined(_APPLEIOS) || defined(__APPLEIOS__) || defined(__AppleIOS__) || defined(__appleios__) /*/
 
 /*/
 /// Define LINUX if any of the Linux variants are defined
