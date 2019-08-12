@@ -65,8 +65,8 @@ int clock_gettime(clockid_t clk_id, struct timespec *res);
 #endif /*/ !defined(HAS_POSIX_TIMEOUTS) /*/
 
 #if defined(MACOSX)
-#if (__MAC_OS_X_VERSION_MAX_ALLOWED <= __MAC_OS_X_VERSION_MAX_ALLOWED_NO_POSIX_SEM)
 #include <semaphore.h>
+#if (__MAC_OS_X_VERSION_MAX_ALLOWED <= __MAC_OS_X_VERSION_MAX_ALLOWED_NO_POSIX_SEM)
 /*/////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////*/
 #define sem_t posix_sem_t
