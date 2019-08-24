@@ -22,17 +22,16 @@
 
 namespace xos {
 namespace platform {
-
+/*/
 namespace microsoft {
 namespace windows {
 
 } /// namespace windows
 } /// namespace microsoft
-
+/*/
 } /// namespace platform
 } /// namespace xos
 
-#if !defined(WINDOWS)
 #if defined(MACOSX)
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -54,11 +53,9 @@ int pthread_timedjoin_np
 (pthread_t thread, void **retval, const struct timespec *abstime) {
     return EINVAL;
 }
-#else // defined(MACOSX)
 #endif // defined(MACOSX)
-#else // !defined(WINDOWS)
-#endif // !defined(WINDOWS)
 
+/*/
 #if !defined(WINDOWS)
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -133,6 +130,5 @@ int _setmode (
     }
     return -1;
 }
-
-#else // !defined(WINDOWS)
 #endif // !defined(WINDOWS)
+/*/

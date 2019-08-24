@@ -25,7 +25,7 @@
 
 namespace xos {
 namespace platform {
-
+/*/
 namespace microsoft {
 namespace windows {
 ///////////////////////////////////////////////////////////////////////
@@ -58,7 +58,7 @@ public:
 };
 } /// namespace windows
 } /// namespace microsoft
-
+/*/
 } /// namespace platform
 } /// namespace xos 
 
