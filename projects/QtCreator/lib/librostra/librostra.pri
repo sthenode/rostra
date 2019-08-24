@@ -72,11 +72,19 @@ $${ROSTRA_SRC}/xos/platform/platform_apple_osx.hpp \
 $${ROSTRA_SRC}/xos/platform/platform_microsoft_windows.hpp \
 $${ROSTRA_SRC}/xos/platform/platform_posix.hpp \
 \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows.h \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows.hpp \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows/Handle.h \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows/Handle.hpp \
+\
 $${ROSTRA_SRC}/xos/lib/rostra/version.hpp \
 
 # librostra SOURCES
 #
 librostra_SOURCES += \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows.cpp \
+$${ROSTRA_SRC}/xos/platform/os/microsoft/windows/Handle.cpp \
+\
 $${ROSTRA_SRC}/xos/platform/platform.cpp \
 \
 $${ROSTRA_SRC}/xos/lib/rostra/version.cpp \
