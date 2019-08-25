@@ -80,6 +80,7 @@ int clock_gettime(clockid_t clk_id, struct timespec *res);
 #define sem_wait posix_sem_wait
 #define sem_trywait posix_sem_trywait
 #define sem_timedwait posix_sem_timedwait
+#define sem_timedwait_relative_np posix_sem_timedwait_relative_np
 #define semctl posix_semctl
 #define semget posix_semget
 #define semop posix_semop
@@ -123,11 +124,13 @@ extern "C" {
 #endif /*/ defined(__cplusplus)  /*/
 
 int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout);
+int sem_timedwait_relative_np(sem_t *sem, const struct timespec *timeout);
 
 #if defined(__cplusplus)
 } /*/ extern "C" /*/
 #endif /*/ defined(__cplusplus)  /*/
 #define SEM_HAS_TIMEDWAIT
+#define SEM_HAS_TIMEDWAIT_RELATIVE_NP
 #else /*/ !defined(SEM_HAS_TIMEDWAIT) /*/
 #endif /*/ !defined(SEM_HAS_TIMEDWAIT) /*/
 #else /*/ !defined(HAS_POSIX_TIMEOUTS) /*/

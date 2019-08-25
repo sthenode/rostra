@@ -13,26 +13,23 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: main.cpp
+///   File: posix.hpp
 ///
 /// Author: $author$
-///   Date: 1/31/2019
+///   Date: 8/25/2019
 ///////////////////////////////////////////////////////////////////////
-#include "xos/app/console/rostra/main.hpp"
-#include "xos/console/main_main.cpp"
+#ifndef _XOS_PLATFORM_OS_POSIX_HPP
+#define _XOS_PLATFORM_OS_POSIX_HPP
+
+#include "xos/base/Base.hpp"
 
 namespace xos {
-namespace app {
-namespace console {
-namespace rostra {
+namespace platform {
+namespace os {
 
-///////////////////////////////////////////////////////////////////////
-///  Class: maint
-///////////////////////////////////////////////////////////////////////
-static main the_main;
 
-} /// namespace rostra
-} /// namespace console
-} /// namespace app
+} /// namespace os
+} /// namespace platform
 } /// namespace xos
 
+#endif /// _XOS_PLATFORM_OS_POSIX_HPP 

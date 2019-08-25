@@ -1,3 +1,4 @@
+/*/
 ///////////////////////////////////////////////////////////////////////
 /// Copyright (c) 1988-2019 $organization$
 ///
@@ -13,26 +14,27 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: main.cpp
+///   File: posix.h
 ///
 /// Author: $author$
-///   Date: 1/31/2019
+///   Date: 8/25/2019
 ///////////////////////////////////////////////////////////////////////
-#include "xos/app/console/rostra/main.hpp"
-#include "xos/console/main_main.cpp"
+/*/
+#ifndef _XOS_PLATFORM_OS_POSIX_H
+#define _XOS_PLATFORM_OS_POSIX_H
 
+#include "xos/platform/platform_configure.h"
+
+#if defined(__cplusplus)
 namespace xos {
-namespace app {
-namespace console {
-namespace rostra {
+namespace platform {
+namespace os {
+#endif /*/ defined(__cplusplus) /*/
 
-///////////////////////////////////////////////////////////////////////
-///  Class: maint
-///////////////////////////////////////////////////////////////////////
-static main the_main;
+#if defined(__cplusplus)
+} /*/ namespace os /*/
+} /*/ namespace platform /*/
+} /*/ namespace xos /*/
+#endif /*/ defined(__cplusplus) /*/
 
-} /// namespace rostra
-} /// namespace console
-} /// namespace app
-} /// namespace xos
-
+#endif /*/ _XOS_PLATFORM_OS_POSIX_H /*/
