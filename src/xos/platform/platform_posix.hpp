@@ -22,6 +22,7 @@
 #define _XOS_PLATFORM_PLATFORM_POSIX_HPP
 
 #include "xos/platform/platform_posix.h"
+#include "xos/base/base.hpp"
 
 namespace xos {
 namespace platform {

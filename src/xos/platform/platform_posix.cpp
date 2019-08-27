@@ -19,6 +19,7 @@
 ///   Date: 3/31/2018
 ///////////////////////////////////////////////////////////////////////
 #include "xos/platform/platform_posix.hpp"
+#include <sys/time.h>
 
 namespace xos {
 namespace platform {
@@ -36,11 +37,20 @@ namespace windows {
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 int clock_gettime(clockid_t clk_id, struct timespec *res) {
-    if ((res)) {
-        memset(res, 0, sizeof(struct timespec));
-        return 0;
+    if ((res) && (CLOCK_REALTIME == clk_id)) {
+        int err = 0;
+        struct timeval tv;
+        if ((err = gettimeofday(&tv, NULL))) {
+            res->tv_sec = 0;
+            res->tv_nsec = 0;
+            return errno;
+        } else {
+            res->tv_sec = tv.tv_sec;
+            res->tv_nsec = ::xos::useconds_nseconds(tv.tv_usec);
+            return 0;
+        }
     }
-    return 1;
+    return EINVAL;
 }
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
