@@ -55,6 +55,8 @@ $${rostra_DEFINES} \
 # librostra HEADERS
 #
 librostra_HEADERS += \
+$${ROSTRA_SRC}/thirdparty/gnu/glibc/posix/execvpe.h \ 
+\
 $${ROSTRA_SRC}/xos/platform/platform.h \ 
 $${ROSTRA_SRC}/xos/platform/platform_packed_begin.h \ 
 $${ROSTRA_SRC}/xos/platform/platform_packed_end.h \ 
@@ -82,6 +84,8 @@ $${ROSTRA_SRC}/xos/lib/rostra/version.hpp \
 # librostra SOURCES
 #
 librostra_SOURCES += \
+$${ROSTRA_SRC}/thirdparty/gnu/glibc/posix/execvpe.c \ 
+\
 $${ROSTRA_SRC}/xos/platform/os/microsoft/windows.cpp \
 $${ROSTRA_SRC}/xos/platform/os/microsoft/windows/Handle.cpp \
 \
