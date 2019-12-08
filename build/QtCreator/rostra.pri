@@ -21,7 +21,11 @@
 # build QtCreator .pri file for rostra
 ########################################################################
 
+UNAME = $$system(uname)
+
+contains(UNAME,Darwin) {
 BUILD_OS = ROSTRA_OS
+} # contains(UNAME,Darwin)
 
 ########################################################################
 # nadir
