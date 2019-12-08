@@ -52,6 +52,7 @@ int clock_gettime(clockid_t clk_id, struct timespec *res) {
     }
     return EINVAL;
 }
+/*/
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 int pthread_tryjoin_np(pthread_t thread, void **retval) {
@@ -63,6 +64,7 @@ int pthread_timedjoin_np
 (pthread_t thread, void **retval, const struct timespec *abstime) {
     return EINVAL;
 }
+/*/
 #endif // defined(MACOSX)
 
 /*/
